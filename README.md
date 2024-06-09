@@ -33,7 +33,11 @@ The backend is built using ASP.NET Core and employs the following key components
 - **Entity Framework Core**: Used for data access and manipulation.
 - **MediatR**: Handles the dispatching of commands and queries.
 - **JWT Authentication**: Secures the API endpoints using JSON Web Tokens.
+    - **Local Storage**: For simplicity, JWT tokens are stored in the browser's local storage. In practice this would be done in a more secure way.
 - **FluentValidation**: Validates the input models.
+- **Logging**: Microsoft.Extensions.Logging is used for logging application events, errors, and information. Logging is configured to output to the console and debug windows. Custom logging providers can be added as needed.
+- **Error Handling**: 
+    - **Global Error Handling Middleware**: Catches unhandled exceptions in the API and returns a standardized error response. Logs errors for debugging and auditing.
 
 ### Frontend (Razor Pages)
 
@@ -95,21 +99,18 @@ The frontend is built using Razor Pages and includes:
 7. **Install frontend dependencies**:
 
     ```bash
-    npm install
+    dotnet restore
     ```
 
 8. **Run the frontend**:
 
     ```bash
-    npm start
+    dotnet run
     ```
 9. **Runnign Tests**:  
 
     ```bash
     cd BowlingScoreCalculatorAPI.Tests
-    ```
-
-     ```bash
     dotnet test
     ```
 
