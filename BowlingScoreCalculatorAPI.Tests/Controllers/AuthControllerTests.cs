@@ -104,7 +104,6 @@ namespace BowlingScoreCalculatorAPI.Tests.Controllers
             result.Should().NotBeNull();
             result!.StatusCode.Should().Be(200);
 
-            // Use a strongly typed model for deserialization
             var valueJson = JsonSerializer.Serialize(result!.Value);
             var value = JsonSerializer.Deserialize<JsonElement>(valueJson);
 

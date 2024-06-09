@@ -1,6 +1,4 @@
 ﻿using BowlingScoreCalculatorAPI.Models;
-using Xunit;
-using System.Collections.Generic;
 
 namespace BowlingScoreCalculatorAPI.Tests.Models
 {

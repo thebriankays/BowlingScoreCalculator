@@ -4,8 +4,6 @@ using BowlingScoreCalculatorAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace BowlingScoreCalculatorAPI.Tests.Repositories
 {
@@ -23,7 +21,6 @@ namespace BowlingScoreCalculatorAPI.Tests.Repositories
             _context = new ApplicationDbContext(options);
             _repository = new GameResultRepository(_context, Mock.Of<ILogger<GameResultRepository>>());
 
-            // Seed the database
             SeedDatabase();
         }
 
@@ -33,11 +30,11 @@ namespace BowlingScoreCalculatorAPI.Tests.Repositories
             {
                 Id = Guid.NewGuid(),
                 Score = 200,
-                Frames = new List<Frame>
-                {
-                    new Frame { FirstRoll = 10 }, // Strike
-                    new Frame { FirstRoll = 9, SecondRoll = 1 } // Spare
-                }
+                Frames =
+                [
+                    new Frame { FirstRoll = 10 },                   // Strike
+                    new Frame { FirstRoll = 9, SecondRoll = 1 }     // Spare
+                ]
             };
 
             _context.GameResults.Add(gameResult);

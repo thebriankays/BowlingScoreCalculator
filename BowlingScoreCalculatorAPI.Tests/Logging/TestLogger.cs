@@ -2,16 +2,10 @@
 
 namespace BowlingScoreCalculatorAPI.Tests.Logging
 {
-    public class TestLogger : ILogger
+    public class TestLogger(string categoryName, TestLoggerProvider provider) : ILogger
     {
-        private readonly string _categoryName;
-        private readonly TestLoggerProvider _provider;
-
-        public TestLogger(string categoryName, TestLoggerProvider provider)
-        {
-            _categoryName = categoryName;
-            _provider = provider;
-        }
+        private readonly string _categoryName = categoryName;
+        private readonly TestLoggerProvider _provider = provider;
 
         IDisposable ILogger.BeginScope<TState>(TState state) => NullScope.Instance;
 

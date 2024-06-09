@@ -1,14 +1,10 @@
-﻿using Xunit;
-using Moq;
-using MediatR;
-using Microsoft.Extensions.Logging;
+﻿using BowlingScoreCalculatorAPI.Commands;
 using BowlingScoreCalculatorAPI.Controllers;
-using BowlingScoreCalculatorAPI.Commands;
-using BowlingScoreCalculatorAPI.Models;
 using FluentAssertions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Moq;
 
 namespace BowlingScoreCalculatorAPI.Tests.Controllers
 {
@@ -35,16 +31,16 @@ namespace BowlingScoreCalculatorAPI.Tests.Controllers
             // Arrange
             var frameInputs = new List<FrameInput>
             {
-                new FrameInput(10, null, null), // Strike
-                new FrameInput(7, 2, null),     // Open frame
-                new FrameInput(3, 5, null),     // Open frame
-                new FrameInput(8, 2, null),     // Spare
-                new FrameInput(10, null, null), // Strike
-                new FrameInput(10, null, null), // Strike
-                new FrameInput(10, null, null), // Strike
-                new FrameInput(6, 4, null),     // Spare
-                new FrameInput(7, 3, null),     // Spare
-                new FrameInput(10, 10, 10)      // Strike with bonus
+                new(10, null, null), // Strike
+                new(7, 2, null),     // Open frame
+                new(3, 5, null),     // Open frame
+                new(8, 2, null),     // Spare
+                new(10, null, null), // Strike
+                new(10, null, null), // Strike
+                new(10, null, null), // Strike
+                new(6, 4, null),     // Spare
+                new(7, 3, null),     // Spare
+                new(10, 10, 10)      // Strike with bonus
             };
 
             var expectedScore = 193;
@@ -67,7 +63,7 @@ namespace BowlingScoreCalculatorAPI.Tests.Controllers
             // Arrange
             var frameInputs = new List<FrameInput>
             {
-                new FrameInput(10, null, null) // Only 1 frame instead of 10
+                new(10, null, null) // Only 1 frame instead of 10
             };
 
             // Act

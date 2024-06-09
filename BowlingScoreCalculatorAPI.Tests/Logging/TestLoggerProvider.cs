@@ -5,9 +5,9 @@ namespace BowlingScoreCalculatorAPI.Tests.Logging
 {
     public class TestLoggerProvider : ILoggerProvider
     {
-        private readonly ConcurrentQueue<(string Category, LogLevel LogLevel, string Message)> _messages = new ConcurrentQueue<(string Category, LogLevel LogLevel, string Message)>();
+        private readonly ConcurrentQueue<(string Category, LogLevel LogLevel, string Message)> _messages = new();
 
-        public ILogger CreateLogger(string categoryName) => new TestLogger(categoryName, this);
+        ILogger ILoggerProvider.CreateLogger(string categoryName) => new TestLogger(categoryName, this);
 
         public void Dispose() { }
 
