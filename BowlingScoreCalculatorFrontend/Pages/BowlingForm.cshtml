@@ -64,13 +64,28 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('bowlingForm');
 
-            form.addEventListener('input', function () {
+            form.addEventListener('input', function (event) {
+                validateInput(event.target);
                 clearTimeout(debounceTimer);
                 debounceTimer = setTimeout(calculateScore, 300);
-
                 handleRollChange();
             });
         });
+
+        function validateInput(input) {
+            if (input.type === 'number') {
+                // Remove leading zeros by parsing to an integer and then setting back
+                if (input.value.startsWith("0") && input.value.length > 1) {
+                    input.value = parseInt(input.value, 10);
+                }
+                // Ensure value is between 0 and 10
+                if (input.value > 10) {
+                    input.value = 10;
+                } else if (input.value < 0) {
+                    input.value = 0;
+                }
+            }
+        }
 
         function handleRollChange() {
             const form = document.getElementById('bowlingForm');
@@ -83,7 +98,7 @@
                     const secondRollInput = document.querySelector(`#frame-${frameIndex + 1}-roll-2`);
                     if (firstRollInput.value == 10 && frameIndex < 9) {
                         secondRollInput.style.display = 'none';
-                        secondRollInput.value = 0; 
+                        secondRollInput.value = 0;
                     } else {
                         secondRollInput.style.display = 'block';
                     }
@@ -131,4 +146,3 @@
         }
     </script>
 }
-

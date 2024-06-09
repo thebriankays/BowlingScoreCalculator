@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace BowlingScoreCalculatorFrontend.Pages
 {
@@ -25,7 +26,7 @@ namespace BowlingScoreCalculatorFrontend.Pages
         {
             if (Frames == null || Frames.Count != 10)
             {
-                Frames = new List<FrameInput>();
+                Frames = [];
                 for (int i = 0; i < 10; i++)
                 {
                     Frames.Add(new FrameInput());
@@ -36,8 +37,13 @@ namespace BowlingScoreCalculatorFrontend.Pages
 
     public class FrameInput
     {
+        [Range(0, 10, ErrorMessage = "First roll must be between 0 and 10.")]
         public int FirstRoll { get; set; }
+
+        [Range(0, 10, ErrorMessage = "Second roll must be between 0 and 10.")]
         public int? SecondRoll { get; set; }
-        public int? ThirdRoll { get; set; } 
+
+        [Range(0, 10, ErrorMessage = "Third roll must be between 0 and 10.")]
+        public int? ThirdRoll { get; set; }
     }
 }
