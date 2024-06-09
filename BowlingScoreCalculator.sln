@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingScoreCalculatorAPI", "BowlingScoreCalculatorAPI\BowlingScoreCalculatorAPI.csproj", "{7AE47813-F2F8-489E-8FB0-77165F76CE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingScoreCalculatorAPI.Tests", "BowlingScoreCalculatorAPI.Tests\BowlingScoreCalculatorAPI.Tests.csproj", "{C3FD3AF0-EDF6-4934-9352-E8441B41A36E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BowlingScoreCalculatorFrontend", "BowlingScoreCalculatorFrontend\BowlingScoreCalculatorFrontend.csproj", "{DE5F3F2F-56E2-498E-B7E5-0E5522B25AC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AE47813-F2F8-489E-8FB0-77165F76CE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE47813-F2F8-489E-8FB0-77165F76CE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE47813-F2F8-489E-8FB0-77165F76CE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE47813-F2F8-489E-8FB0-77165F76CE18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3FD3AF0-EDF6-4934-9352-E8441B41A36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3FD3AF0-EDF6-4934-9352-E8441B41A36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3FD3AF0-EDF6-4934-9352-E8441B41A36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3FD3AF0-EDF6-4934-9352-E8441B41A36E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE5F3F2F-56E2-498E-B7E5-0E5522B25AC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE5F3F2F-56E2-498E-B7E5-0E5522B25AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE5F3F2F-56E2-498E-B7E5-0E5522B25AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE5F3F2F-56E2-498E-B7E5-0E5522B25AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
