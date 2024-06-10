@@ -17,7 +17,7 @@ The architecture follows the CQRS (Command Query Responsibility Segregation) pat
 - **Error Handling and Logging**: Comprehensive error handling and logging for both the API and frontend.
 
 ## Technologies Used
-- **Backend**: ASP.NET Core Web API, Entity Framework Core, MediatR, FluentValidation
+- **Backend**: ASP.NET Core Web API, Entity Framework Core (migrations included), MediatR, FluentValidation
 - **Frontend**: Razor Pages, JavaScript
 - **Authentication**: JWT (JSON Web Token)
 - **Testing**: xUnit, Moq, FluentAssertions
@@ -43,8 +43,8 @@ The backend is built using ASP.NET Core and employs the following key components
 
 The frontend is built using Razor Pages and includes:
 
-- **HTML and JavaScript**: Provides the structure and functionality of the UI.
-- **Bootstrap**: Ensures a responsive and visually appealing design.
+- **HTML and JavaScript**: 
+- **Bootstrap**: Responsive UI.
 - **AJAX**: Used for asynchronous communication with the backend API.
 
 ## Getting Started
